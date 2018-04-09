@@ -1,0 +1,151 @@
+.fixed-top-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+}
+.mediumnavigation .container {
+    width: 100%;
+}
+.mediumnavigation .container div:first-child {
+    display: inline-block;
+}
+#navbarsExampleDefault div {
+    width: 100%;
+}
+.alertbar-share {
+  display: none;
+  text-align: center;
+  width: 100%;
+}
+.alertbar-share ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.alertbar-share ul li {
+  display: inline-block;
+}
+@media (min-width: 768px) {
+.navbar-right {
+  float: right !important;
+  margin-right: -20px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .alertbar-share {
+    display: block;
+  }
+}
+
+.content-block-mediumish div:first-child {
+  width: 100% !important;
+}
+.share span {
+  display: block;
+}
+.tags > li {
+  padding: 5px;
+}
+.posttitle {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.mediumish-blog-category div div{
+  display: inline-block;
+}
+
+.morefromcategory {
+    font-weight: 400;
+    font-size: 15px;
+    text-decoration: none;
+    margin-top: 10px;
+    color: #999;
+}
+
+.morefromcategory:hover {
+    text-decoration: none;
+}
+.recent-posts .listrecent .thumbnail {
+  width: 100%;
+  height: 200px;
+}
+
+.bottompagination span.navigation, .bottompagination .pagination {
+  display: block;
+  font-size: 0.93rem;
+  padding: 15px 0;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 20px;
+  color: #292929;
+  border-top: 1px solid #ddd;
+  border-radius: 0;
+}
+
+.bottompagination span.navigation li, .bottompagination .pagination .page-numbers {
+  display: inline-block;
+  list-style: none;
+  margin: 0 2px;
+  padding: 0 20px;
+  border-radius: 2px;
+  font-size: 14px;
+  position: relative;
+  color: #999;
+}
+.bottompagination span.navigation a {
+  color: #999;
+}
+.bottompagination span.navigation li.is-active a, .bottompagination .pagination .page-numbers.current {
+  color: #111;
+  font-weight: 700;
+}
+@media (max-width: 767px) {
+  .bottompagination span.navigation li, .bottompagination .pagination .page-numbers {
+    padding: 0 10px;
+  }
+
+  .bottompagination ul {
+    padding: 0;
+  }
+}
+
+.display-none {
+  visibility: hidden;
+}
+
+.no-display {
+  display: none;
+}
+.author-style {
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.mediumish-tabs {
+  margin: 1rem 0rem;
+  display: inline-block;
+  width: 100%;
+}
+.mediumish-tabs li {
+  display: inline-block;
+}
+.mediumish-description, .mediumish-description + span {
+  display: block !important;
+}
+.mediumish-author {
+  margin: auto !important;
+  width: 30%;
+}
+.mediumish-author-details {
+  margin: auto !important;
+  width: 70%;
+  text-align: left !important;
+}
+.mediumish-author img {
+  float: none !important;
+  display: block;
+  margin: auto;
+}

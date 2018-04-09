@@ -1,0 +1,24 @@
+global-css:
+  css:
+    theme:
+      css/bootstrap.min.css: {}
+      css/font-awesome.min.css: {}
+      css/mediumish.css: {}
+      css/style.css: {}
+
+global-js:
+  js:
+    js/bootstrap.min.js: {}
+    js/ie10-viewport-bug-workaround.js: {}
+    js/tether.min.js: {}
+    js/mediumish.js: {}
+    js/script.js: {}
+
+  dependencies:
+    - core/jquery
+
+font:
+  css:
+    base:
+      '//fonts.googleapis.com/css?family=Righteous': { external: true }
+

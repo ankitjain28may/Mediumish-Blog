@@ -1,0 +1,38 @@
+name: mediumish blog
+type: theme
+description: 'Template built specifically for Medium website design fans.'
+core: 8.x
+libraries:
+  - mediumish_blog/global-css
+  - mediumish_blog/global-js
+  - mediumish_blog/font
+
+base theme: false
+
+# Regions
+regions:
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  featured: Featured
+  recent_posts: Recent Posts
+  content: Content
+  related_posts: Related Posts
+  right_sidebar: Right Sidebar
+  footer: Footer
+
+  header: Header
+  secondary_menu: 'Secondary menu'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  home_high1: Home Highlight 1
+  home_high2: Home Highlight 2
+  home_high3: Home Highlight 3
+  content_top: Content Top
+  help: Help
+  sidebar_first: First Sidebar
+  sidebar_second: Second Sidebar
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_fourth: 'Footer fourth'
+  footer_fifth: 'Footer fifth'
