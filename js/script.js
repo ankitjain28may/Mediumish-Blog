@@ -40,23 +40,26 @@
     if ($(selector).siblings('.bottompagination')[0]) {
       updatePagination(selector, i);
     } else {
-      var pages = $(selector).find('ul.js-pager__items').html();
+      var pages = $(selector).find('ul.js-pager__items').clone(true);
       var classes = $(selector).find('ul.js-pager__items').attr('class');
-      var pagination = '<div class="bottompagination"><span class="navigation"><ul class="' + classes + '" data-mediumish-pager="pager-' + i +'">';
-      pagination = pagination + pages + '</ul></span></div>';
-      $(selector).find('ul.js-pager__items').attr('data-mediumish-parent-pager', 'pager-' + i).css('display', 'none');
+      var pagination = '<div class="bottompagination"><span class="navigation"></span></div>';
+      // pagination = pagination + pages + '</ul></span></div>';
+      $
+      $(selector).find('ul.js-pager__items').css('display', 'none');
       $(selector).after(pagination);
+      $(selector).siblings('.bottompagination').find('span').append(pages);
     }
   }
 
   function updatePagination(selector, i) {
-    $(selector).siblings('.bottompagination').find('li').remove();
-    var pages = $(selector).find('ul.js-pager__items').html();
+    $(selector).siblings('.bottompagination').find('ul').remove();
+    var pages = $(selector).find('ul.js-pager__items').clone(true);
     var classes = $(selector).find('ul.js-pager__items').attr('class');
-    var pagination = '<span class="navigation"><ul class="' + classes + '" data-mediumish-pager="pager-' + i +'">';
-    pagination = pagination + pages + '</ul></span>';
-    $(selector).find('ul.js-pager__items').attr('data-mediumish-parent-pager', 'pager-' + i).css('display', 'none');
-    $(selector).siblings('.bottompagination').html(pagination);
+    var pagination = '<span class="navigation"></span>';
+    // pagination = pagination + pages + '</ul></span>';
+    $(selector).find('ul.js-pager__items').css('display', 'none');
+    $(selector).siblings('.bottompagination').find('span').append(pages);
+    console.log(pages);
   }
 
   // End Create Pagination
@@ -205,22 +208,6 @@
       }
       lastscrollTop = $(window).scrollTop();
   }
-
-  $(document).on('click', 'div.bottompagination a', function (e) {
-    e.preventDefault();
-    var ele = $(this).parent('li').parent('ul').attr('data-mediumish-pager');
-    console.log(ele);
-    var href = $(this).attr('href');
-    var rel = $(this).attr('rel');
-    var search = 'a';
-    $.each(this.attributes, function() {
-      search += '[' + this.name + '="' + this.value + '"]';
-    });
-
-    console.log($("ul[data-mediumish-parent-pager='" + ele +"']").find(search));
-
-    $("ul[data-mediumish-parent-pager='" + ele +"']").find(search).click();
-  })
 
   $('.mediumish-blog-author').ready(function() {
     var content = '<div class="row post-top-meta"><div class="col-md-2 col-sm-2 mediumish-author"><a href="@authlink"><img class="author-thumb" src="@picture" alt="@author"></a></div><div class="col-md-10 col-sm-10 mediumish-author-details"><a class="link-dark author-style" href="@authlink">@author</a><span class="author-description mediumish-description">@description</span><span class="post-date">@date</span><span class="dot"></span></div></div>';
