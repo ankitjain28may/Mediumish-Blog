@@ -73,6 +73,20 @@
  */
 #}
 
+<div class="row post-top-meta">
+  <div class="col-md-2 col-sm-2 mediumish-author">
+    {{ author_picture }}
+  </div>
+  <div class="col-md-10 col-sm-10 mediumish-author-details">
+    {{ author_name }}
+    <span class="author-description mediumish-description">{{ author_bio }}</span>
+    <span class="post-date">{{ date }}</span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+{{ label }}
+
 <!-- Begin Featured Image -->
 <div class="mediumish-blog-image">
 {{ content.field_image }}

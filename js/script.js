@@ -209,20 +209,7 @@
       lastscrollTop = $(window).scrollTop();
   }
 
-  $('.mediumish-blog-author').ready(function() {
-    var content = '<div class="row post-top-meta"><div class="col-md-2 col-sm-2 mediumish-author"><a href="@authlink"><img class="author-thumb" src="@picture" alt="@author"></a></div><div class="col-md-10 col-sm-10 mediumish-author-details"><a class="link-dark author-style" href="@authlink">@author</a><span class="author-description mediumish-description">@description</span><span class="post-date">@date</span><span class="dot"></span></div></div>';
-    var data = {
-      author: $('.mediumish-blog-author').text(),
-      date: $('.mediumish-blog-date').text(),
-      authlink: $('.mediumish-blog-author a').attr('href'),
-      picture: $('.mediumish-blog-author img').attr('src'),
-      description: "Web Developer and open source enthisiast",
-    }
-    content = content.replace('@author', data.author).replace('@author', data.author).replace('@authlink', data.authlink).replace('@authlink', data.authlink).replace('@date', data.date).replace('@picture', data.picture).replace('@description', data.description);
-
-    $('.mainheading').prepend(content);
-
-  });
+  $(".mediumish-author img").addClass('author-thumb');
 
   $(".share span").ready(function () {
     $(".share span").each(function(i, obj) {

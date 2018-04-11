@@ -149,3 +149,13 @@
   display: block;
   margin: auto;
 }
+
+.mediumish-block .row.post-top-meta {
+  display: none;
+}
+.mainheading:nth-child(n) {
+  display: none;
+}
+.mainheading:first-child {
+  display: block;
+}
