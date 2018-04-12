@@ -75,10 +75,10 @@
 <!-- begin post -->
 <div class="card">
   <a href="{{ url }}">
-    <img class="img-fluid" src="{{ file_url(node.field_image.entity.fileuri) }}" alt="">
+    <img class="img-fluid thumbnail" src="{{ file_url(node.field_image.entity.fileuri) }}" alt="">
   </a>
   <div class="card-block">
-    <h2 class="card-title"><a href="{{ url }}"></a></h2>
+    <h2 class="card-title"><a href="{{ url }}"></a>{{ node.label }}</h2>
     <h4 class="card-text">{{ content.body }}</h4>
     <div class="metafooter">
       <div class="wrapfooter">
@@ -91,7 +91,7 @@
         </span>
         <span class="author-meta">
         <span class="post-name"><a href="author.html">{{author_name}}</a></span><br/>
-        <span class="post-date">{{date}}</span><span class="dot"></span><span class="post-read">6 min read</span>
+        <span class="post-date">{{ node.createdtime | date("d F Y")}}</span><span class="dot"></span>
         </span>
       </div>
     </div>
