@@ -72,61 +72,28 @@
  * @ingroup themeable
  */
 #}
-
-<div class="row post-top-meta">
-  <div class="col-md-2 col-sm-2 mediumish-author">
-  {% if author_picture['#user'].user_picture.target_id %}
-    {{ author_picture }}
-  {% else %}
-    <a href="#"><img class="author-thumb" src="{{ author_default_image }}" alt="anonymous"></a>
-  {% endif %}
+<!-- begin post -->
+<div class="card">
+  <a href="{{ url }}">
+    <img class="img-fluid" src="{{ file_url(node.field_image.entity.fileuri) }}" alt="">
+  </a>
+  <div class="card-block">
+    <h2 class="card-title"><a href="{{ url }}"></a></h2>
+    <h4 class="card-text">{{ content.body }}</h4>
+    <div class="metafooter">
+      <div class="wrapfooter">
+        <span class="meta-footer-thumb mediumish-author-thumb">
+        {% if author_picture['#user'].user_picture.target_id %}
+          {{ author_picture }}
+        {% else %}
+          <a href="{{ url }}"><img class="author-thumb" src="{{ author_default_image }}" alt="anonymous"></a>
+        {% endif %}
+        </span>
+        <span class="author-meta">
+        <span class="post-name"><a href="author.html">{{author_name}}</a></span><br/>
+        <span class="post-date">{{date}}</span><span class="dot"></span><span class="post-read">6 min read</span>
+        </span>
+      </div>
+    </div>
   </div>
-  <div class="col-md-10 col-sm-10 mediumish-author-details">
-    {{ author_name }}
-    <span class="author-description mediumish-description">{{ author_bio }}</span>
-    <span class="post-date">{{ date }}</span>
-  </div>
 </div>
-
-{{ label }}
-
-{% if node.hasField('field_image') %}
-<!-- Begin Featured Image -->
-  <div class="mediumish-blog-image">
-  {{ content.field_image }}
-  </div>
-  <!-- End Featured Image -->
-{% endif %}
-
-{% if node.hasField('body') %}
-<!-- Begin Post Content -->
-<div class="mediumish-blog-body">
-{{ content.body }}
-</div>
-<!-- End Post Content -->
-{% endif %}
-
-{% if node.hasField('field_tags') %}
-<!-- Begin Tags -->
-<div class="mediumish-blog-tags">
-{{ content.field_tags }}
-</div>
-<!-- End Tags -->
-{% endif %}
-
-{% if node.hasField('field_category') %}
-<!-- Begin Categories -->
-<div class="mediumish-blog-category">
-{{ content.field_category }}
-</div>
-<!-- End Categories -->
-{% endif %}
-
-
-{% if node.hasField('field_comments') %}
-<div class="mediumish-blog-comment">
-{{ content.field_comments }}
-</div>
-{% endif %}
-
-<div class="hideshare"></div>

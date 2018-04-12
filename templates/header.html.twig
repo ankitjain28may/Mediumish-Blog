@@ -1,0 +1,18 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+  <div class="container">
+  {% if page.navigation or page.navigation_collapsible %}
+
+    {{ page.navigation }}
+
+    {% if page.navigation_collapsible %}
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      {{ page.navigation_collapsible }}
+    </div>
+    {% endif %}
+  {% endif %}
+  </div>
+</nav>

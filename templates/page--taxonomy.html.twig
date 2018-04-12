@@ -49,27 +49,23 @@
 
 {% include '@mediumish_blog/header.html.twig' %}
 
-<div class="container">
-  {% if page.featured %}
-  <!-- Begin Featured
-  ================================================== -->
-  <section class="featured-posts">
-  {{ page.featured }}
-  </section>
-  <!-- End Featured
-  ================================================== -->
-  {% endif %}
 
-  {% if page.recent_posts %}
-  <!-- Begin Recent Posts
-  ================================================== -->
-  <section class="recent-posts">
-  {{ page.recent_posts }}
-  </section>
-  <!-- End Recent Posts
-  ================================================== -->
-  {% endif %}
-</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-xs-12">
+        {% if page.content %}
+          {{ page.content }}
+        {% endif %}
+      </div>
+
+      <div class="col-md-3 col-md-offset-9 col-xs-12">
+      {% if page.right_sidebar %}
+        {{ page.right_sidebar }}
+      {% endif %}
+      </div>
+    </div>
+  </div>
+
 
   {% if page.footer %}
   <div class="container">

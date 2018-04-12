@@ -87,6 +87,10 @@
 
           var {title, link, author, author_link, body, created, image, picture} = extractInfo(this);
 
+          if (!picture) {
+            picture = location.hostname + '/themes/mediumish_blog/img/anonymous.png';
+          }
+
           contentHtml = contentHtml.replace('@title', title).replace('@body', body.substr(1, 200)).replace('@author', author).replace('@author', author).replace('@link', link).replace('@link', link).replace('@authlink', author_link).replace('@authlink', author_link).replace('@image', image).replace('@created', created).replace('@picture', picture);
 
           $(this).html(contentHtml);
@@ -110,6 +114,10 @@
           var contentHtml = '<div class="card"><a href="@link"><img class="img-fluid thumbnail" src="@image" alt=""></a><div class="card-block"><h2 class="card-title"><a href="@link">@title</a></h2><h4 class="card-text">@body</h4><div class="metafooter"><div class="wrapfooter"><span class="meta-footer-thumb"><a href="@authlink"><img class="author-thumb" src="@picture" alt="@author"></a></span><span class="author-meta"><span class="post-name"><a href="@authlink">@author</a></span><br/><span class="post-date">@created</span><span class="dot"></span></span></div></div></div></div>';
 
           var {title, link, author, author_link, body, created, image, picture} = extractInfo(this);
+
+          if (!picture) {
+            picture = location.hostname + '/themes/mediumish_blog/img/anonymous.png';
+          }
 
           contentHtml = contentHtml.replace('@title', title).replace('@body', body.substr(1, 200)).replace('@author', author).replace('@author', author).replace('@link', link).replace('@link', link).replace('@authlink', author_link).replace('@authlink', author_link).replace('@image', image).replace('@created', created).replace('@picture', picture);
           $(this).html(contentHtml);
@@ -208,8 +216,10 @@
       }
       lastscrollTop = $(window).scrollTop();
   }
-
-  $(".mediumish-author img").addClass('author-thumb');
+  setInterval(function() {
+    $(".mediumish-author img").addClass('author-thumb');
+    $(".mediumish-author-thumb img").addClass('author-thumb');
+  }, 250);
 
   $(".share span").ready(function () {
     $(".share span").each(function(i, obj) {
