@@ -153,9 +153,15 @@
 .mediumish-block .row.post-top-meta {
   display: none;
 }
-.mainheading:nth-child(n) {
-  display: none;
+
+.clearfix {
+  overflow: hidden;
 }
-.mainheading:first-child {
+.right-sidebar span {
   display: block;
+  padding: 4px;
+}
+html {
+  position: relative;
+  min-height: 100%;
 }
