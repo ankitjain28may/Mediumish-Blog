@@ -76,11 +76,16 @@
   </div>
 
   {% if page.related_posts %}
-  <section class="recent-posts related_posts">
-    {{ page.related_posts }}
-  </section>
+  <div class="graybg">
+    <div class="container">
+      <div class="row listrecent listrelated">
+        <section class="recent-posts related_posts">
+          {{ page.related_posts }}
+        </section>
+      </div>
+    </div>
+  </div>
   {% endif %}
-
   <div class="hideshare"></div>
 
   {% if page.footer %}

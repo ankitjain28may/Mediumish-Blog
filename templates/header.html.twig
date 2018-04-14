@@ -1,18 +1,27 @@
 <nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
   <div class="container">
   {% if page.navigation or page.navigation_collapsible %}
+    <div class="row">
+      <div class="col-sm-12 col-md-4 mediumish-site-branding">
 
-    {{ page.navigation }}
+      {{ page.navigation }}
 
-    {% if page.navigation_collapsible %}
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
+      {% if page.navigation_collapsible %}
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      {% endif %}
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      {{ page.navigation_collapsible }}
+      </div>
+      <div class="col-sm-12 col-md-8">
+
+      {% if page.navigation_collapsible %}
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          {{ page.navigation_collapsible }}
+        </div>
+      {% endif %}
+      </div>
     </div>
-    {% endif %}
   {% endif %}
   </div>
 </nav>
