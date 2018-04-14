@@ -51,48 +51,35 @@
 
   <div class="container">
     <div class="row">
-
-
-
     {% if page.content %}
-
-    <!-- Begin Fixed Left Share -->
-    <div class="col-md-2 col-xs-12">
-      <div class="share">
-        <p>
-          Share
-        </p>
-        {% include '@mediumish_blog/share.html.twig' %}
+      <div class="col-md-2 col-xs-12">
+        <div class="share">
+          <p>
+            Share
+          </p>
+          {% include '@mediumish_blog/share.html.twig' %}
+        </div>
       </div>
-    </div>
-    <!-- End Fixed Left Share -->
 
-    <!-- Begin Post -->
-    <div class="col-md-8 col-md-offset-2 col-xs-12">
-      {{ page.content }}
-    </div>
-    <!-- End List Posts
-    ================================================== -->
-
-    <div class="alertbar alertbar-share">
-      <div class="container text-center">
-        {% include '@mediumish_blog/share.html.twig' %}
+      <div class="col-md-8 col-md-offset-2 col-xs-12">
+        {{ page.content }}
       </div>
-    </div>
+
+      <div class="alertbar alertbar-share">
+        <div class="container text-center">
+          {% include '@mediumish_blog/share.html.twig' %}
+        </div>
+      </div>
 
     {% endif %}
-
-    {% if page.right_sidebar %}
-    <!-- Begin Post -->
-    <div class="col-md-2 col-md-offset-10 col-xs-12">
-      {{ page.right_sidebar }}
-    </div>
-    <!-- End List Posts
-    ================================================== -->
-    {% endif %}
-
     </div>
   </div>
+
+  {% if page.related_posts %}
+  <section class="recent-posts related_posts">
+    {{ page.related_posts }}
+  </section>
+  {% endif %}
 
   <div class="hideshare"></div>
 

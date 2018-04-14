@@ -47,7 +47,6 @@ function mediumish_blog_preprocess_page(array &$variables) {
  */
 function mediumish_blog_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical' && $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term')) {
-    $term = Term::load($tid);
     $suggestions[] = 'page__taxonomy__';
   }
 }
@@ -61,9 +60,15 @@ function mediumish_blog_theme_suggestions_node_alter(array &$suggestions, array 
   if ($variables['elements']['#view_mode'] == "full") {
 
   }*/
-  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical' && $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term')) {
-    $term = Term::load($tid);
+
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name == "entity.taxonomy_term.canonical" && $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term')) {
     $suggestions[] = 'node__view__taxonomy_term';
+  } elseif (preg_match("/^view.archive.*$/", $route_name)) {
+    $parameter = \Drupal::routeMatch()->getRawParameter('arg_0');
+    if ($parameter != null) {
+      $suggestions[] = 'node__view__archive_month';
+    }
   }
 }
 

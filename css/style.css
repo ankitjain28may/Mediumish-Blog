@@ -161,7 +161,19 @@
   display: block;
   padding: 4px;
 }
-html {
-  position: relative;
-  min-height: 100%;
+
+.right-sidebar ul {
+  list-style: none;
+  padding: 4px;
+}
+
+.mediumish-content-sidebar .card-columns.listrecent {
+  -webkit-column-count:2;
+  -moz-column-count:2;
+  column-count:2;
+}
+.right-sidebar .card-columns.listrecent {
+  -webkit-column-count:1;
+  -moz-column-count:1;
+  column-count:1;
 }
