@@ -167,10 +167,7 @@
   display: none;
 }
 
-.clearfix {
-  overflow: hidden;
-}
-.right-sidebar span {
+.right-sidebar .mediumish-block span {
   display: block;
   padding: 4px;
 }
@@ -206,4 +203,9 @@
 }
 ul {
   list-style: none;
+}
+.mediumish-blog-body pre {
+  background: rgba(0,0,0,.05);
+  padding: 20px;
+  white-space: pre-wrap;
 }
