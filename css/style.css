@@ -211,3 +211,29 @@ ul {
   padding-top: 43px;
   transition: all 0.4s;
 }
+
+.mediumish-lock-screen {
+  background-color: #fff;
+  background-color: rgba(245,245,245,0.95);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9998;
+}
+
+.mediumish-lock-screen.mediumish-progress-hidden {
+  display: none;
+}
+
+.mediumish-progress-throbber {
+  background-image: url('../img/loader.gif');
+  background-repeat: no-repeat;
+  height: 128px;
+  left: 45%;
+  position: absolute;
+  top: 42%;
+  width: 128px;
+  z-index: 9999;
+}

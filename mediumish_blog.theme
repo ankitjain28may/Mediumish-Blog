@@ -46,7 +46,7 @@ function mediumish_blog_preprocess_page(array &$variables) {
  * Implements hook_theme_suggestions_page_alter().
  */
 function mediumish_blog_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical' && $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term')) {
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
     $suggestions[] = 'page__taxonomy__';
   }
 }
@@ -62,7 +62,7 @@ function mediumish_blog_theme_suggestions_node_alter(array &$suggestions, array 
   }*/
 
   $route_name = \Drupal::routeMatch()->getRouteName();
-  if ($route_name == "entity.taxonomy_term.canonical" && $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term')) {
+  if ($route_name == "entity.taxonomy_term.canonical") {
     $suggestions[] = 'node__view__taxonomy_term';
   } elseif (preg_match("/^view.archive.*$/", $route_name)) {
     $parameter = \Drupal::routeMatch()->getRawParameter('arg_0');
@@ -173,5 +173,18 @@ function mediumish_blog_theme_suggestions_details_alter(array &$suggestions, arr
 function mediumish_blog_preprocess_menu_local_task(array &$variables) {
   //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ * @param array $suggestions
+ * @param array $variables
+ */
+function mediumish_blog_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}
+
 
 

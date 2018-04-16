@@ -45,6 +45,8 @@
  * @ingroup themeable
  */
 #}
+{% include '@mediumish_blog/preloader.html.twig' %}
+
 <div class="layout-container">
 
   {% include '@mediumish_blog/header.html.twig' %}
@@ -57,7 +59,7 @@
 
   <div class="container">
   {% if page.featured %}
-    <section class="featured-posts">
+    <section class="posts">
       {{ page.featured }}
     </section>
   {% endif %}
@@ -65,7 +67,7 @@
     <div class="row mediumish-content-sidebar">
       <div class="col-md-8 col-xs-12">
       {% if page.recent_posts %}
-        <section class="recent-posts">
+        <section class="posts">
           {{ page.recent_posts }}
         </section>
       {% endif %}

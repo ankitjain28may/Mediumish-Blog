@@ -8,10 +8,9 @@ global-css:
 
 global-js:
   js:
+    js/tether.min.js: {}
     js/bootstrap.min.js: {}
     js/ie10-viewport-bug-workaround.js: {}
-    js/tether.min.js: {}
-    js/mediumish.js: {}
     js/script.js: {}
 
   dependencies:
