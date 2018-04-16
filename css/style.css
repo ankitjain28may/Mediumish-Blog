@@ -189,9 +189,6 @@
   -moz-column-count:1;
   column-count:1;
 }
-.footer {
-  margin-top: 0;
-}
 .footer div * {
   display: inline-block;
 }
@@ -208,4 +205,9 @@ ul {
   background: rgba(0,0,0,.05);
   padding: 20px;
   white-space: pre-wrap;
+}
+.site-content {
+  min-height: 70vh;
+  padding-top: 43px;
+  transition: all 0.4s;
 }

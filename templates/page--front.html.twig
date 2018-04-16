@@ -49,6 +49,12 @@
 
   {% include '@mediumish_blog/header.html.twig' %}
 
+  {{ page.breadcrumb }}
+
+  {{ page.highlighted }}
+
+  {{ page.help }}
+
   <div class="container">
   {% if page.featured %}
     <section class="featured-posts">
@@ -74,14 +80,6 @@
 
   </div>
 
-  {% if page.footer %}
-  <div class="container">
-    <div class="footer">
-      {{ page.footer }}
-    <div class="clearfix">
-      </div>
-    </div>
-  </div>
-  {% endif %}
+  {% include '@mediumish_blog/footer.html.twig' %}
 
 </div>{# /.layout-container #}

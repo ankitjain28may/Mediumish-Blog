@@ -47,7 +47,7 @@
 #}
 <div class="layout-container">
 
-  {% include '@mediumish_blog/header.html.twig' %}
+{% include '@mediumish_blog/header.html.twig' %}
 
 
   <div class="site-content container">
@@ -58,7 +58,7 @@
         {% endif %}
       </div>
 
-      <div class="col-md-4 col-md-offset-10 col-xs-12 right-sidebar">
+      <div class="col-md-4 col-md-offset-8 col-xs-12 right-sidebar">
       {% if page.right_sidebar %}
         {{ page.right_sidebar }}
       {% endif %}
