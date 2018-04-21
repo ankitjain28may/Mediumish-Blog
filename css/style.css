@@ -203,7 +203,7 @@ ul {
 }
 .site-content {
   min-height: 70vh;
-  padding-top: 43px;
+  padding-top: 100px;
   transition: all 0.4s;
 }
 
@@ -244,4 +244,10 @@ ul {
   .mediumish-progress-throbber {
     background-image: url('../img/loader-1.gif');
   }
+}
+.mediumish-archive ul {
+  padding: 4px;
+}
+body {
+  padding-top: 0;
 }
