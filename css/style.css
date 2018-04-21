@@ -192,10 +192,14 @@
 ul {
   list-style: none;
 }
-.mediumish-blog-body pre {
+.mediumish-blog-body blockquote {
   background: rgba(0,0,0,.05);
   padding: 20px;
-  white-space: pre-wrap;
+  border: 0;
+}
+.mediumish-blog-body img {
+  max-width: 100%;
+  height: auto;
 }
 .site-content {
   min-height: 70vh;
